@@ -4,7 +4,7 @@ function App() {
   return (
     <>
     <section>
-      <h2>About me</h2>
+      <h2 className="text-3xl">About me</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quod quae qui adipisci provident? Odit sunt maxime dolores temporibus officiis quis eveniet iste. Ex numquam quibusdam est sequi eveniet minus!</p>
     </section>
     <section>
@@ -43,9 +43,9 @@ function App() {
       <p>email</p>
       <div>
         {/* Increase size just by using font-size lmao */}
-        <BsGithub />
-        <BsLinkedin />
-        <BsTwitter />
+        <BsGithub className="text-4xl"/>
+        <BsLinkedin className="text-4xl"/>
+        <BsTwitter className="text-4xl"/>
       </div>
     </section>
     </>
