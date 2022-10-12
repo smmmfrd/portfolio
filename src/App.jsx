@@ -6,7 +6,7 @@ import profilePic from "./assets/pexels-laura-tancredi-7083927.jpg"
 function App() {
   return (
     <>
-    <header className="mb-2 border-b-4 p-3 sticky top-0">
+    <header className="mb-2 border-b-4 p-3 sticky top-0 bg-gray-900">
       <nav className="max-w-5xl mx-auto">
         <h1 className="text-2xl">Sam Mumford's Portfolio</h1>
       </nav>
@@ -24,14 +24,14 @@ function App() {
       </header>
       <section className="flex flex-col items-center gap-12">
         <h2 className="text-3xl">My work</h2>
-        <div className="grid md:grid-cols-3 gap-2 sm:grid-cols-1">
+        <div className="grid md:grid-cols-3 sm:grid-cols-1">
           <Project
             projectName={"Battleship"}
             projectDescription={"The game Battleship, redone from plain Javascript to React."}
           />
           <Project
             projectName={"Rookie Drive"}
-            projectDescription={"Google drive but only can create documents from basic web dev lessons, users must sign in to create their own."}
+            projectDescription={"A relica of Google Drive, including user storage."}
           />
           <Project
             projectName={"Fake RMT Site"}
