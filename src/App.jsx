@@ -28,28 +28,28 @@ function App() {
           <Project
             projectName={"Rookie Drive"}
             projectDescription={"A relica of Google Drive, including user storage."}
-            technologies={["react"]}
+            technologies={["react", "firebase", "webpack"]}
             githubLink={"#"}
             siteLink={"#"}
           />
           <Project
             projectName={"Where's Waldo App"}
             projectDescription={'A "Find the Character" game'}
-            technologies={["react"]}
+            technologies={["react", "firebase", "webpack"]}
             githubLink={"#"}
             siteLink={"#"}
           />
           <Project
             projectName={"Battleship"}
             projectDescription={"The game Battleship, redone from plain Javascript to React."}
-            technologies={["react"]}
+            technologies={["react", "react-router", "tailwind", "vite"]}
             githubLink={"#"}
             siteLink={"#"}
           />
           <Project
             projectName={"Fake RMT Site"}
             projectDescription={"A fake store for 'real money trading' of video game items."}
-            technologies={["react"]}
+            technologies={["react", "react-router", "vite"]}
             githubLink={"#"}
             siteLink={"#"}
           />

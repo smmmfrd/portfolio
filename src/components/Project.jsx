@@ -1,16 +1,31 @@
 import { BsArrowRightShort } from "react-icons/bs";
-import { FaReact } from "react-icons/fa";
+import { RiReactjsLine } from "react-icons/ri";
+import { TbBrandFirebase } from "react-icons/tb";
+import { SiReactrouter, SiWebpack, SiTailwindcss, SiVite } from "react-icons/si"
 
 export default function Project({ projectName, projectDescription, technologies, githubLink, siteLink }) {
     function findElement(techName) {
         switch (techName){
             case "react":
-                return <FaReact />;
+                return <RiReactjsLine />;
+            case "firebase":
+                return <TbBrandFirebase />;
+            case "react-router":
+                return <SiReactrouter />;
+            case "webpack":
+                return <SiWebpack />;
+            case "tailwind":
+                return <SiTailwindcss />;
+            case "vite":
+                return <SiVite />;
+            default:
+                return;
         }
     }
 
     const techElements = technologies.map(tech => {
-        return <div className="px-1 bg-black flex items-center gap-1">
+        return <div className="px-1 bg-black flex-none text-lg
+            flex items-center gap-1 rounded-sm">
             {findElement(tech)} {tech}</div>
     });
     
@@ -26,7 +41,7 @@ export default function Project({ projectName, projectDescription, technologies,
                 <div>
                     <h4 className="text-xl">Technologies</h4>
                     <div className="grid grid-cols-2">
-                        <div className="flex items-start">
+                        <div className="flex flex-wrap content-start items-start gap-0.5">
                             {techElements}
                         </div>
                         <div className="flex justify-between flex-col items-end">
