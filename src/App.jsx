@@ -15,7 +15,7 @@ function App() {
       <header className="w-5/6 mx-auto pr-32
           flex gap-8 items-center">
         <img src={profilePic} alt="Stock image of some guy"
-        className="w-40 h-60 shadow-l33t"/> 
+        className="w-40 h-60"/> 
         <div className="">
           <h2 className="text-5xl">About me</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quod quae qui adipisci provident?
@@ -24,18 +24,34 @@ function App() {
       </header>
       <section className="flex flex-col items-center gap-12">
         <h2 className="text-3xl">My work</h2>
-        <div className="grid md:grid-cols-3 sm:grid-cols-1">
-          <Project
-            projectName={"Battleship"}
-            projectDescription={"The game Battleship, redone from plain Javascript to React."}
-          />
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           <Project
             projectName={"Rookie Drive"}
             projectDescription={"A relica of Google Drive, including user storage."}
+            technologies={["react"]}
+            githubLink={"#"}
+            siteLink={"#"}
+          />
+          <Project
+            projectName={"Where's Waldo App"}
+            projectDescription={'A "Find the Character" game'}
+            technologies={["react"]}
+            githubLink={"#"}
+            siteLink={"#"}
+          />
+          <Project
+            projectName={"Battleship"}
+            projectDescription={"The game Battleship, redone from plain Javascript to React."}
+            technologies={["react"]}
+            githubLink={"#"}
+            siteLink={"#"}
           />
           <Project
             projectName={"Fake RMT Site"}
             projectDescription={"A fake store for 'real money trading' of video game items."}
+            technologies={["react"]}
+            githubLink={"#"}
+            siteLink={"#"}
           />
         </div>
         <h4 className="font-bold">Check my Github for more!</h4>
