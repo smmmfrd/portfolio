@@ -30,10 +30,10 @@ export default function Project({ projectName, projectDescription, technologies,
     });
     
     return (
-        <article className="bg-slate-700 rounded-xl py-4 px-6 md:mx-3 my-4
-            flex flex-col">
+        <article className="bg-gray-500 drop-shadow-xl rounded-sm
+            py-4 px-6 md:mx-3 my-4 flex flex-col gap-4">
             {/* TODO - Image Carousel */}
-            <div className="flex-none w-full max-w-xs h-40 bg-white" />
+            <div className="flex-none w-full max-w-xs h-40 bg-white m-auto" />
             <h3 className="flex-none text-3xl">{projectName}</h3>
             <div className="flex-auto p-4
                 flex flex-col justify-between gap-4">
