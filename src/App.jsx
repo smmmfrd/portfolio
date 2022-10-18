@@ -1,7 +1,6 @@
 import Project from "./components/Project";
-
-import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 import profilePic from "./assets/pexels-laura-tancredi-7083927.jpg"
+import SocialLinks from "./components/SocialLinks";
 
 export default function App() {
   return (
@@ -21,11 +20,7 @@ export default function App() {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quod quae qui adipisci provident?
             Odit sunt maxime dolores temporibus officiis quis eveniet iste. Ex numquam quibusdam est sequi eveniet minus!</p>
 
-          <div className="flex">
-            <BsGithub className="text-4xl"/>
-            <BsLinkedin className="text-4xl"/>
-            <BsTwitter className="text-4xl"/>
-          </div>
+          <SocialLinks />
         </div>
       </header>
       <section className="flex flex-col items-center bg-gray-600">
@@ -55,25 +50,15 @@ export default function App() {
           <Project
             projectName={"Fake RMT Site"}
             projectDescription={"A fake store for 'real money trading' of video game items."}
-            technologies={["react", "react-router", "vite"]}
+            technologies={["react", "vite", "react-router"]}
             githubLink={"#"}
             siteLink={"#"}
           />
         </div>
         <h4 className="font-bold mb-2">Check my Github for more!</h4>
       </section>
-      <footer>
-        <h2>Contact Me</h2>
-        <p>Please get in touch!</p>
-        <p>Address
-          Riverside, CA
-        </p>
-        <p>email</p>
-        <div className="flex">
-          <BsGithub className="text-4xl"/>
-          <BsLinkedin className="text-4xl"/>
-          <BsTwitter className="text-4xl"/>
-        </div>
+      <footer className="mb-4">
+        <SocialLinks />
       </footer>
     </main>
     </>
