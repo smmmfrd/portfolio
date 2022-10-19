@@ -5,12 +5,13 @@ import SocialLinks from "./components/SocialLinks";
 export default function App() {
   return (
     <>
-    <header className="z-20 mb-2 border-b-4 p-3 sticky top-0 bg-gray-700">
+    {/* OLD BG: bg-gray-700 */}
+    <header className="z-20 mb-2 border-b-4 p-3 sticky top-0 bg-cyan-500">
       <nav className="max-w-5xl mx-auto">
         <h1 className="text-2xl">Sam Mumford's Portfolio</h1>
       </nav>
     </header>
-    <main className="max-w-5xl mx-auto flex flex-col gap-6">
+    <main className="md:max-w-5xl sm:max-w-full mx-auto flex flex-col gap-6">
       <header className="w-5/6 mx-auto pr-32
           flex gap-8 items-center">
         <img src={profilePic} alt="Stock image of some guy"
@@ -23,7 +24,7 @@ export default function App() {
           <SocialLinks />
         </div>
       </header>
-      <section className="flex flex-col items-center bg-gray-600">
+      <section className="flex flex-col items-center bg-blurredBg">
         <h2 className="text-5xl my-8">Projects</h2>
         <div className="grid md:grid-cols-2 sm:grid-cols-1">
           <Project
@@ -57,7 +58,7 @@ export default function App() {
         </div>
         <h4 className="font-bold mb-2">Check my Github for more!</h4>
       </section>
-      <footer className="mb-4">
+      <footer className="mb-4 flex justify-center">
         <SocialLinks />
       </footer>
     </main>
