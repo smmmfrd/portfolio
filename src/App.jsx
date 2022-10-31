@@ -1,6 +1,6 @@
 import Project from "./components/Project";
-import profilePic from "./assets/pexels-laura-tancredi-7083927.jpg"
 import SocialLinks from "./components/SocialLinks";
+import Header from "./components/Header";
 
 export default function App() {
   return (
@@ -11,22 +11,11 @@ export default function App() {
         <h1 className="text-2xl">Sam Mumford's Portfolio</h1>
       </nav>
     </header>
-    <main className="md:max-w-5xl max-w-full mx-auto flex flex-col">
-      <header className="w-5/6 mx-auto pr-32
-          flex gap-8 items-center">
-        <img src={profilePic} alt="Stock image of some guy"
-        className="w-40 h-60"/> 
-        <div className="">
-          <h2 className="text-5xl">About me</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quod quae qui adipisci provident?
-            Odit sunt maxime dolores temporibus officiis quis eveniet iste. Ex numquam quibusdam est sequi eveniet minus!</p>
-
-          <SocialLinks />
-        </div>
-      </header>
+    <main className="lg:max-w-5xl max-w-full mx-auto flex flex-col">
+      <Header />
       <section className="flex flex-col items-center bg-blurredBg mt-6">
         <h2 className="text-5xl my-8">Projects</h2>
-        <div className="grid md:grid-cols-2 grid-cols-1">
+        <div className="grid lg:grid-cols-2 grid-cols-1">
           <Project
             projectName={"Rookie Drive"}
             projectDescription={"A relica of Google Drive, including user storage."}
