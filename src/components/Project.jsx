@@ -25,12 +25,12 @@ export default function Project({ projectName, projectDescription, technologies,
 
     const techElements = technologies.map(tech => {
         return <div className="px-1 bg-black flex-none text-lg
-            flex items-center gap-1 rounded-sm">
+            flex items-center gap-1 rounded-sm" key={tech}>
             {findElement(tech)} {tech}</div>
     });
     
     return (
-        <article className="bg-blurredBg drop-shadow-xl rounded-sm
+        <article className="bg-blurredBg drop-shadow-xl rounded-lg
             py-4 px-6 md:mx-3 my-4 flex flex-col gap-4">
             {/* TODO - Image Carousel */}
             <div className="flex-none w-full max-w-xs h-40 bg-white m-auto" />
@@ -38,7 +38,7 @@ export default function Project({ projectName, projectDescription, technologies,
             <div className="flex-auto p-4
                 flex flex-col justify-between gap-4">
                 <p>{projectDescription}</p>
-                <div className="bg-blurredBg p-2 rounded-sm">
+                <div className="bg-blurredBg p-2 rounded-lg">
                     <h4 className="text-xl">Technologies</h4>
                     <div className="grid md:grid-cols-3 grid-cols-2">
                         <div className="md:col-span-2 col-span-1 flex flex-wrap content-start items-start gap-0.5">

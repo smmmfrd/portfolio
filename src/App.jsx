@@ -11,7 +11,7 @@ export default function App() {
         <h1 className="text-2xl">Sam Mumford's Portfolio</h1>
       </nav>
     </header>
-    <main className="md:max-w-5xl sm:max-w-full mx-auto flex flex-col gap-6">
+    <main className="md:max-w-5xl max-w-full mx-auto flex flex-col">
       <header className="w-5/6 mx-auto pr-32
           flex gap-8 items-center">
         <img src={profilePic} alt="Stock image of some guy"
@@ -24,9 +24,9 @@ export default function App() {
           <SocialLinks />
         </div>
       </header>
-      <section className="flex flex-col items-center bg-blurredBg">
+      <section className="flex flex-col items-center bg-blurredBg mt-6">
         <h2 className="text-5xl my-8">Projects</h2>
-        <div className="grid md:grid-cols-2 sm:grid-cols-1">
+        <div className="grid md:grid-cols-2 grid-cols-1">
           <Project
             projectName={"Rookie Drive"}
             projectDescription={"A relica of Google Drive, including user storage."}
@@ -49,9 +49,9 @@ export default function App() {
             siteLink={"#"}
           />
           <Project
-            projectName={"Fake RMT Site"}
-            projectDescription={"A fake store for 'real money trading' of video game items."}
-            technologies={["react", "vite", "react-router"]}
+            projectName={"This Portfolio"}
+            projectDescription={"This portfolio itself!"}
+            technologies={["react", "tailwind", "react-router", "vite"]}
             githubLink={"#"}
             siteLink={"#"}
           />
