@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks";
 
 export default function Header() {
     return (
-        <header className="w-5/6 mx-auto my-8 px-8 py-4 bg-blurredBg rounded-3xl
+        <header className="w-11/12 mx-auto my-8 px-8 py-4 bg-blurredBg rounded-3xl
           flex gap-8 items-center">
             <img src={profilePic} alt="Stock image of some guy"
                 className="w-40 h-60 shadow-2xl" />
