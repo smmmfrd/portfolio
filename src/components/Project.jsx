@@ -40,7 +40,7 @@ export default function Project({ projectName, projectDescription, technologies,
                 <p>{projectDescription}</p>
                 <div className="bg-blurredBg p-2 rounded-lg">
                     <h4 className="text-xl">Technologies</h4>
-                    <div className="flex">
+                    <div className="flex gap-1">
                         <div className="w-full
                             flex flex-wrap content-start items-start gap-0.5">
                             {techElements}

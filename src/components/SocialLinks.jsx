@@ -1,4 +1,3 @@
-import {SiFreecodecamp} from "react-icons/si";
 import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 export default function SocialLinks() {
@@ -8,17 +7,14 @@ export default function SocialLinks() {
 
     return (
         <div className="flex gap-6 m-auto p-2 items-center">
-            <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+            <a title="My Github" href="http://google.com" target="_blank" rel="noopener noreferrer">
                 <BsGithub className="text-4xl cursor-pointer" />
             </a>
-            <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+            <a title="My LinkedIn" href="http://google.com" target="_blank" rel="noopener noreferrer">
                 <BsLinkedin className="text-4xl" />
             </a>
-            <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+            <a title="My Twitter" href="http://google.com" target="_blank" rel="noopener noreferrer">
                 <BsTwitter className="text-4xl" />
-            </a>
-            <a href="http://google.com" target="_blank" rel="noopener noreferrer">
-                <SiFreecodecamp className="text-5xl" />
             </a>
         </div>
     )
