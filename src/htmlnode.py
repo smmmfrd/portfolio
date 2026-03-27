@@ -11,7 +11,7 @@ class HTMLNode:
         return f"HTMLNode (tag={self.tag}, value={self.value}, children={self.children})"
 
 # No children, inline
-class LeafNode:
+class LeafNode(HTMLNode):
     def __init__(self, tag, text):
         super().__init__(tag, text, None)
     
@@ -19,10 +19,10 @@ class LeafNode:
 
         return f"<{self.tag}>{self.text}</{self.tag}>"
 
-# Have children
-class ParentNode:
-    def __init__(self, tag, text, children):
-        super().__init__(tag, text, children)
+# Has children
+class ParentNode(HTMLNode):
+    def __init__(self, tag, children):
+        super().__init__(tag, None, children)
     
     def to_html(self):
         res = f"<{self.tag}>"

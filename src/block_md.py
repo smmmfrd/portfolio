@@ -1,3 +1,5 @@
+from src.htmlnode import ParentNode
+
 def extract_title(md):
     blocks = markdown_to_blocks(md)
     for block in blocks:
@@ -5,7 +7,13 @@ def extract_title(md):
             return block[1:].strip()
 
 def extract_content(md):
-    return md
+    blocks = markdown_to_blocks(md)
+    body = ParentNode(tag="body", children=[])
+
+    for block in blocks:
+        print(block)
+
+    return body.to_html()
 
 def markdown_to_blocks(md):
     blocks = md.split("\n\n")
