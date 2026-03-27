@@ -1,13 +1,13 @@
 import os
 import shutil
 
-from src.block_md import extract_title
+from src.block_md import extract_title, extract_content
 
 # Where the server will serve from.
 dir_path_public = "public"
 dir_path_content = "content"
 
-template_path = "./index.html"
+template_path = "./template.html"
 
 def main():
     dir_base = "./"
@@ -40,10 +40,12 @@ def generate_html(from_path, template, dest_path):
 
         with open(template_path) as template_file:
             template = template_file.read()
-
+            
             title = extract_title(md)
-
             template = template.replace("{{ Title }}", title)
+
+            content = extract_content(md)
+            template = template.replace("{{ Content }}", content)
 
             want_path = os.path.dirname(dest_path)
             

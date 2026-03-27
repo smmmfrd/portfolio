@@ -4,6 +4,9 @@ def extract_title(md):
         if block.startswith("# "):
             return block[1:].strip()
 
+def extract_content(md):
+    return md
+
 def markdown_to_blocks(md):
     blocks = md.split("\n\n")
 
