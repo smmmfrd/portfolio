@@ -1,7 +1,7 @@
 import os
 import shutil
 
-from src.block_md import extract_title, extract_content
+from src.parse_markdown import extract_title, extract_content
 
 # Where the server will serve from.
 dir_path_public = "public"
@@ -54,8 +54,6 @@ def generate_html(from_path, template, dest_path):
             
             to_file = open(dest_path, "w")
             to_file.write(template)
-
-            print(to_file)
 
 
 
