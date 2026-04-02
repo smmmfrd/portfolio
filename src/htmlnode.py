@@ -1,8 +1,9 @@
 class HTMLNode:
-    def __init__(self, tag, text, children):
+    def __init__(self, tag, text, children, props):
         self.tag = tag
         self.text = text
         self.children = children
+        self.props = props
 
     def to_html(self):
         print("Not defined")
@@ -12,8 +13,8 @@ class HTMLNode:
 
 # No children, inline
 class LeafNode(HTMLNode):
-    def __init__(self, tag, text):
-        super().__init__(tag, text, None)
+    def __init__(self, tag, text, props=None):
+        super().__init__(tag, text, None, props)
     
     def to_html(self):
 
@@ -21,8 +22,8 @@ class LeafNode(HTMLNode):
 
 # Has children
 class ParentNode(HTMLNode):
-    def __init__(self, tag, children):
-        super().__init__(tag, None, children)
+    def __init__(self, tag, children, props=None):
+        super().__init__(tag, None, children, props)
     
     def to_html(self):
         res = f"<{self.tag}>"

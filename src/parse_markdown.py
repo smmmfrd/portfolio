@@ -1,7 +1,7 @@
 from enum import Enum
 
 from src.htmlnode import ParentNode
-
+from src.parse_text import text_node_to_html_node, text_to_children, TextNode, TextType
 
 class BlockType(Enum):
     PARAGRAPH = "paragraph"
@@ -86,9 +86,9 @@ def block_to_html_node(block):
 
 def paragraph_to_html_nodes(block):
     lines = block.split("\n")
-    # paragraph = " ".join(lines)
-    # children = text_to_children(paragraph)
-    return ParentNode("p", [])
+    paragraph = " ".join(lines)
+    children = text_to_children(paragraph)
+    return ParentNode("p", [children])
 
 
 def heading_to_html_node(block):
@@ -103,17 +103,15 @@ def heading_to_html_node(block):
         raise ValueError(f"invalid heading level: {level}")
 
     text = block[level + 1 :]
-    # children = text_to_children(text)
-    # return ParentNode(f"h{level}", children)
-    return ParentNode(f"h{level}", [])
+    children = text_to_children(text)
+    return ParentNode(f"h{level}", children)
 
 
 def code_to_html_node(block):
-    # new_html_node = text_node_to_html_node(
-    #     TextNode(block[4:-3].strip(), TextType.PLAIN_TEXT)
-    # )
-    # child = ParentNode("code", [new_html_node])
-    child = ParentNode("code", [])
+    new_html_node = text_node_to_html_node(
+        TextNode(block[4:-3].strip(), TextType.PLAIN_TEXT)
+    )
+    child = ParentNode("code", [new_html_node])
     parent_node = ParentNode("pre", [child])
     return parent_node
 
@@ -127,10 +125,9 @@ def quote_to_html_node(block):
             raise ValueError("invalid quote block")
         new_lines.append(line.lstrip(">").strip())
 
-    # content = " ".join(new_lines)
-    # children = text_to_children(content)
-    # return ParentNode("blockquote", children)
-    return ParentNode("blockquote", [])
+    content = " ".join(new_lines)
+    children = text_to_children(content)
+    return ParentNode("blockquote", children)
 
 
 def list_to_html_node(block, ordered):
@@ -138,7 +135,7 @@ def list_to_html_node(block, ordered):
     html_lines = []
     for item in lines:
         text = item[3 if ordered else 2 :]
-        # children = text_to_children(text)
-        # html_lines.append(ParentNode("li", children))
+        children = text_to_children(text)
+        html_lines.append(ParentNode("li", children))
 
     return ParentNode("ol" if ordered else "ul", html_lines)
