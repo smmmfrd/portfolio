@@ -17,7 +17,9 @@ class LeafNode(HTMLNode):
         super().__init__(tag, text, None, props)
     
     def to_html(self):
-
+        if self.tag is None:
+            return f"{self.text}"
+        
         return f"<{self.tag}>{self.text}</{self.tag}>"
 
 # Has children

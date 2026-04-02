@@ -88,7 +88,7 @@ def paragraph_to_html_nodes(block):
     lines = block.split("\n")
     paragraph = " ".join(lines)
     children = text_to_children(paragraph)
-    return ParentNode("p", [children])
+    return ParentNode("p", children)
 
 
 def heading_to_html_node(block):
