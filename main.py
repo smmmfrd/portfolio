@@ -15,15 +15,11 @@ def main():
 
     if os.path.exists(dir_base + dir_path_public):
         shutil.rmtree(dir_base + dir_path_public)
-    
-
-    # copy_file('template.html', dir_base, dir_base + dir_path_public)
-    # generate_html(f"./{dir_path_content}/index.md", template_path, f"./{dir_path_public}/index.html")
 
     generate_content_recursive(dir_path_content, template_path, dir_path_public, dir_base)
 
 
-def generate_content_recursive(content_path, template_path, dest_path, basepath):
+def generate_content_recursive(content_path, template_path, dest_path, base_path):
     if not os.path.exists(content_path):
         return
     
@@ -40,9 +36,9 @@ def generate_content_recursive(content_path, template_path, dest_path, basepath)
                 print("we need to make html of this")
                 file_name += ".html"
                 target_path = target_path.removesuffix(".md") + ".html"
-                generate_html(from_path, template_path, target_path)
+                generate_html(from_path, template_path, target_path, base_path)
         else:
-            generate_content_recursive(from_path, template_path, target_path, basepath)
+            generate_content_recursive(from_path, template_path, target_path, base_path)
 
 
 # This is for copying static files over, like CSS or images.
@@ -58,7 +54,7 @@ def copy_file(filename, source_path, target_path):
         shutil.copy(from_path, dest_path)
 
 
-def generate_html(from_path, template, dest_path):
+def generate_html(from_path, template, dest_path, base_path):
     print(f"Making html from {from_path} to {dest_path}")
 
     with open(from_path) as md_file:
@@ -72,6 +68,8 @@ def generate_html(from_path, template, dest_path):
 
             content = extract_content(md)
             template = template.replace("{{ Content }}", content)
+
+            template = template.replace('href="/', f'href="{base_path}')
 
             want_path = os.path.dirname(dest_path)
             
