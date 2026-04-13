@@ -42,7 +42,7 @@ def generate_content_recursive(content_path, template_path, dest_path, basepath)
                 target_path = target_path.removesuffix(".md") + ".html"
                 generate_html(from_path, template_path, target_path)
         else:
-            print("we need to copy this.")
+            generate_content_recursive(from_path, template_path, target_path, basepath)
 
 
 # This is for copying static files over, like CSS or images.
