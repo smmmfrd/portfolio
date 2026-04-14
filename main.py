@@ -29,33 +29,31 @@ def generate_content_recursive(content_path, template_path, dest_path, base_path
 
         if os.path.isfile(from_path):
             file_name, file_type = os.path.splitext(from_path)
-            print(f"{from_path} -> {target_path}")
-            print(f"{from_path} is a {file_type}")
 
             if file_type == ".md":
-                print("we need to make html of this")
                 file_name += ".html"
                 target_path = target_path.removesuffix(".md") + ".html"
                 generate_html(from_path, template_path, target_path, base_path)
+            else:
+                copy_file(from_path, target_path, dest_path)
         else:
             generate_content_recursive(from_path, template_path, target_path, base_path)
 
 
 # This is for copying static files over, like CSS or images.
-def copy_file(filename, source_path, target_path):
-    if not os.path.exists(target_path):
-        os.mkdir(target_path)
+def copy_file(from_path, target_path, dest_path):
+    print(dest_path)
+    if not os.path.exists(dest_path):
+        os.mkdir(dest_path)
     
-    from_path = os.path.join(source_path, filename)
-    dest_path = os.path.join(target_path, filename)
-    print(f"* {from_path} -> {dest_path}")
+    print(f"* {from_path} -> {target_path}")
 
     if os.path.isfile(from_path):
-        shutil.copy(from_path, dest_path)
+        shutil.copy(from_path, target_path)
 
 
 def generate_html(from_path, template, dest_path, base_path):
-    print(f"Making html from {from_path} to {dest_path}")
+    print(f"{from_path} -> {dest_path}")
 
     with open(from_path) as md_file:
         md = md_file.read()
