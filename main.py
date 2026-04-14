@@ -10,7 +10,7 @@ dir_path_content = "content"
 template_path = "./template.html"
 
 def main():
-    dir_base = "./"
+    dir_base = "/"
     print(f"Creating {dir_path_public} directory")
 
     if os.path.exists(dir_base + dir_path_public):
@@ -68,6 +68,7 @@ def generate_html(from_path, template, dest_path, base_path):
             template = template.replace("{{ Content }}", content)
 
             template = template.replace('href="/', f'href="{base_path}')
+            template = template.replace('src="/', f'src="{base_path}')
 
             want_path = os.path.dirname(dest_path)
             
